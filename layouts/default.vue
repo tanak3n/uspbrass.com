@@ -5,6 +5,9 @@
         <v-img src="/logo.png" />
       </v-avatar>
       <v-toolbar-title>滋賀県立大学吹奏楽部</v-toolbar-title>
+      <v-btn text nuxt to="/" class="ml-5 hidden-xs-only">ホーム</v-btn>
+      <v-spacer />
+      <v-btn text nuxt to="/contact" class="hidden-xs-only">お問い合わせ</v-btn>
     </v-app-bar>
     <v-content>
       <v-container>
@@ -13,15 +16,20 @@
     </v-content>
     <v-footer dark padless>
       <v-card flat tile class="text-center flex">
-        <v-card-text>
+        <v-card-text class="headline font-weight-light">
+          University of Shiga Prefecture Wind Orchestra
+        </v-card-text>
+        <v-btn outlined nuxt to="/contact">お問い合わせ</v-btn>
+        <v-card-text class="mt-5">
           <v-btn
             v-for="footerIcon in footerIcons"
             :key="footerIcon"
             :href="footerIcon.url"
-            class="mx-4 white--text"
-            icon
+            class="mx-4 black--text"
+            color="white"
+            fab
           >
-            <v-icon size="24px">{{ footerIcon.icon }}</v-icon>
+            <v-icon>{{ footerIcon.icon }}</v-icon>
           </v-btn>
         </v-card-text>
         <v-divider />
