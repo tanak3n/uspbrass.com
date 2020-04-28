@@ -16,9 +16,18 @@ export default {
         name: 'description',
         content:
           '滋賀県立大学吹奏楽部の公式ウェブサイトです。今後の演奏会やイベント、依頼演奏などの情報をお知らせします。'
+      },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://uspbrass.com'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-icon', href: '/apple-touch-icon-precomposed.png' }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -80,6 +89,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) { }
+    extend(config, ctx) {}
   }
 }
