@@ -22,14 +22,14 @@
         <v-btn outlined nuxt to="/contact">お問い合わせ</v-btn>
         <v-card-text class="mt-5">
           <v-btn
-            v-for="footerIcon in footerIcons"
-            :key="footerIcon.url"
-            :href="footerIcon.url"
+            v-for="(footerItem, i) in footerItems"
+            :key="i"
+            :href="footerItem.href"
             class="mx-4 black--text"
             color="white"
             fab
           >
-            <v-icon>{{ footerIcon.icon }}</v-icon>
+            <v-icon>{{ footerItem.icon }}</v-icon>
           </v-btn>
         </v-card-text>
         <v-divider />
@@ -53,12 +53,12 @@ export default {
       //   right: true,
       //   rightDrawer: false,
       title: '滋賀県立大学吹奏楽部',
-      footerIcons: [
-        { icon: 'mdi-twitter', url: 'https://twitter.com/uspbrass' },
-        { icon: 'mdi-instagram', url: 'https://www.instagram.com/usp_brass/' },
+      footerItems: [
+        { icon: 'mdi-twitter', href: 'https://twitter.com/uspbrass' },
+        { icon: 'mdi-instagram', href: 'https://www.instagram.com/usp_brass/' },
         {
           icon: 'mdi-youtube',
-          url: 'https://www.youtube.com/channel/UCVaybU4j_-bD7p8R3EA-k6w/'
+          href: 'https://www.youtube.com/channel/UCVaybU4j_-bD7p8R3EA-k6w/'
         }
       ]
     }
