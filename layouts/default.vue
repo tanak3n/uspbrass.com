@@ -23,7 +23,7 @@
         <v-card-text class="mt-5">
           <v-btn
             v-for="footerIcon in footerIcons"
-            :key="footerIcon"
+            :key="footerIcon.url"
             :href="footerIcon.url"
             class="mx-4 black--text"
             color="white"
