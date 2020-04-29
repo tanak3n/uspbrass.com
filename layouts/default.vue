@@ -1,6 +1,29 @@
 <template>
   <v-app>
-    <v-app-bar fixed app>
+    <v-navigation-drawer v-model="drawer" app>
+      <v-list dense nav>
+        <v-list-item
+          v-for="naviItem in naviItems"
+          :key="naviItem.title"
+          link
+          nuxt
+          :to="naviItem.to"
+        >
+          <v-list-item-icon>
+            <v-icon>{{ naviItem.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ naviItem.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+    <v-app-bar app>
+      <v-app-bar-nav-icon
+        class="hidden-lg-and-up"
+        @click.stop="drawer = !drawer"
+      />
       <v-avatar tile class="mr-2">
         <v-img src="/logo.png" />
       </v-avatar>
@@ -14,7 +37,7 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-footer dark padless>
+    <v-footer dark padless app absolute>
       <v-card flat tile class="text-center flex">
         <v-card-text class="headline font-weight-light">
           University of Shiga Prefecture Wind Orchestra
@@ -47,7 +70,7 @@ export default {
   data() {
     return {
       //   clipped: false,
-      //   drawer: false,
+      drawer: null,
       //   fixed: false,
       //   miniVariant: false,
       //   right: true,
@@ -60,6 +83,10 @@ export default {
           icon: 'mdi-youtube',
           href: 'https://www.youtube.com/channel/UCVaybU4j_-bD7p8R3EA-k6w/'
         }
+      ],
+      naviItems: [
+        { title: 'ホーム', icon: 'mdi-home', to: '/' },
+        { title: 'お問い合わせ', icon: 'mdi-help-circle', to: '/contact' }
       ]
     }
   }
