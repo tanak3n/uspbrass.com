@@ -1,15 +1,19 @@
 <template>
-  <v-container>
-    <div>
-      <v-parallax src="/parallax_regular_concert.jpg">
-        <v-row>
-          <v-col cols="12">
-            <span class="display-1">滋賀県立大学吹奏楽部</span>
-          </v-col>
-        </v-row>
-      </v-parallax>
-      これはトップページの内容
-    </div>
+  <v-container fluid>
+    <v-img max-height="450px" position="50% 90%" src="/regular_concert.jpg">
+      <v-row
+        align="center"
+        justify="center"
+        class="lightbox white--text pa-2 fill-height"
+      >
+        <v-col class="text-center" cols="12">
+          <h1 class="display-2 font-weight-thin mb-4">
+            University of Shiga Prefecture Wind Orchestra
+          </h1>
+        </v-col>
+      </v-row>
+    </v-img>
+    <!-- これはトップページの内容 -->
   </v-container>
 </template>
 
