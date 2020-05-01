@@ -12,7 +12,6 @@
           <v-list-item-icon>
             <v-icon>{{ naviItem.icon }}</v-icon>
           </v-list-item-icon>
-
           <v-list-item-content>
             <v-list-item-title>{{ naviItem.title }}</v-list-item-title>
           </v-list-item-content>
@@ -33,16 +32,14 @@
       <v-btn text nuxt to="/contact" class="hidden-xs-only">お問い合わせ</v-btn>
     </v-app-bar>
     <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-content>
     <v-footer dark padless app absolute>
       <v-card flat tile class="text-center flex">
         <v-card-text class="headline font-weight-light">
           University of Shiga Prefecture Wind Orchestra
         </v-card-text>
-        <v-btn outlined nuxt to="/contact">お問い合わせ</v-btn>
+        <v-btn outlined nuxt to="/contact" active-class="">お問い合わせ</v-btn>
         <v-card-text class="mt-5">
           <v-btn
             v-for="(footerItem, i) in footerItems"

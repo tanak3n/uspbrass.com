@@ -1,5 +1,7 @@
 <template>
-  <div>お問い合わせページの内容</div>
+  <v-container>
+    <div>お問い合わせページの内容</div>
+  </v-container>
 </template>
 
 <script>
