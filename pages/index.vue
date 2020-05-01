@@ -10,3 +10,18 @@
     これはトップページの内容
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      title: 'ホーム'
+    }
+  },
+  head() {
+    return {
+      title: this.title
+    }
+  }
+}
+</script>
