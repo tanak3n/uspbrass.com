@@ -8,7 +8,7 @@
 export default {
   data() {
     return {
-      title: 'お問い合わせ'
+      title: '当部について'
     }
   },
   head() {

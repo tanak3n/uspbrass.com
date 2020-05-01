@@ -83,6 +83,8 @@ export default {
       ],
       naviItems: [
         { title: 'ホーム', icon: 'mdi-home', to: '/' },
+        { title: '当部について', icon: 'mdi-information', to: '/about' },
+        { title: '大会記録', icon: 'mdi-history', to: '/records' },
         { title: 'お問い合わせ', icon: 'mdi-help-circle', to: '/contact' }
       ]
     }

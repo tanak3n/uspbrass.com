@@ -7,13 +7,14 @@
         class="lightbox white--text pa-2 fill-height"
       >
         <v-col class="text-center" cols="12">
-          <h1 class="display-2 font-weight-thin mb-4">
+          <h1 class="display-1 mb-4">
             University of Shiga Prefecture Wind Orchestra
           </h1>
         </v-col>
       </v-row>
     </v-img>
     <!-- これはトップページの内容 -->
+    <div style="height: 5000px;"></div>
   </v-container>
 </template>
 
