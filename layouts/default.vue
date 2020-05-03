@@ -19,10 +19,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar app>
-      <v-app-bar-nav-icon
-        class="hidden-lg-and-up"
-        @click.stop="drawer = !drawer"
-      />
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-avatar tile class="mr-2">
         <v-img src="/logo.png" />
       </v-avatar>
