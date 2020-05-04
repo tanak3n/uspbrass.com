@@ -1,36 +1,163 @@
 <template>
   <v-container>
     <h1>{{ title }}</h1>
-    <h2>吹奏楽コンクール</h2>
-    <v-row>
-      <v-col
-        v-for="competitionResult in competitionResults"
-        :key="competitionResult.year"
-        cols="12"
-        md="6"
-        lg="4"
-      >
+    <h2 class="hidden-sm-and-up">吹奏楽コンクール</h2>
+    <v-row class="hidden-sm-and-up">
+      <v-col v-for="item in competitionResults" :key="item.year" cols="12">
         <v-card>
-          <v-card-title> {{ competitionResult.year }}年 </v-card-title>
+          <v-card-title> {{ item.year }}年 </v-card-title>
           <v-card-text>
             <dl>
-              <dt>課題曲</dt>
+              <dt class="font-weight-bold">課題曲</dt>
               <dd class="ml-2">
-                {{
-                  competitionResult.required
-                    ? competitionResult.required
-                    : '不明'
-                }}
+                {{ item.required ? item.required : '不明' }}
               </dd>
-              <dt>自由曲</dt>
+              <dt class="font-weight-bold">自由曲</dt>
               <dd class="ml-2">
-                {{ competitionResult.free ? competitionResult.free : '不明' }}
+                {{ item.free ? item.free : '不明' }}
+              </dd>
+              <dt class="font-weight-bold">指揮者</dt>
+              <dd class="ml-2">
+                {{ item.conductor ? item.conductor : '不明' }}
               </dd>
             </dl>
           </v-card-text>
+          <v-card-title>県大会</v-card-title>
+          <v-card-text>
+            <v-avatar
+              v-if="item.prefResult.prize === 'gold'"
+              class="mx-2"
+              color="yellow lighten-2"
+            >
+              <span class="black--text">金賞</span>
+            </v-avatar>
+            <v-avatar
+              v-else-if="item.prefResult.prize === 'silver'"
+              class="mx-2"
+              color="grey"
+            >
+              <span class="white--text">銀賞</span>
+            </v-avatar>
+            <v-avatar
+              v-else-if="item.prefResult.prize === 'bronze'"
+              class="mx-2"
+              color="brown"
+            >
+              <span class="white--text">銅賞</span>
+            </v-avatar>
+            <span v-else>不明</span>
+            <span v-if="item.prefResult.representative">滋賀県代表</span>
+          </v-card-text>
+          <template v-if="item.prefResult.representative">
+            <v-card-title>関西大会</v-card-title>
+            <v-card-text>
+              <v-avatar
+                v-if="item.kansaiResult.prize === 'gold'"
+                class="mx-2"
+                color="yellow lighten-2"
+              >
+                <span class="black--text">金賞</span>
+              </v-avatar>
+              <v-avatar
+                v-else-if="item.kansaiResult.prize === 'silver'"
+                class="mx-2"
+                color="grey"
+              >
+                <span class="white--text">銀賞</span>
+              </v-avatar>
+              <v-avatar
+                v-else-if="item.kansaiResult.prize === 'bronze'"
+                class="mx-2"
+                color="brown"
+              >
+                <span class="white--text">銅賞</span>
+              </v-avatar>
+              <span v-else>不明</span>
+            </v-card-text>
+          </template>
         </v-card>
       </v-col>
     </v-row>
+    <v-card class="hidden-xs-only">
+      <v-card-title><h2>吹奏楽コンクール</h2></v-card-title>
+      <v-simple-table>
+        <template v-slot:default>
+          <thead>
+            <tr>
+              <th class="text-left">西暦</th>
+              <th class="text-left">指揮者</th>
+              <th class="text-left">課題曲</th>
+              <th class="text-left">自由曲</th>
+              <th class="text-left">結果（県大会）</th>
+              <th class="text-left">滋賀県代表</th>
+              <th class="text-left">結果（関西大会）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in competitionResults" :key="item.year">
+              <td>{{ item.year }}</td>
+              <td>{{ item.conductor }}</td>
+              <td>{{ item.required }}</td>
+              <td>{{ item.free }}</td>
+              <td>
+                <v-avatar
+                  v-if="item.prefResult.prize === 'gold'"
+                  color="yellow lighten-2"
+                  size="36"
+                >
+                  <span class="black--text">金賞</span>
+                </v-avatar>
+                <v-avatar
+                  v-else-if="item.prefResult.prize === 'silver'"
+                  color="grey"
+                  size="36"
+                >
+                  <span class="white--text">銀賞</span>
+                </v-avatar>
+                <v-avatar
+                  v-else-if="item.prefResult.prize === 'bronze'"
+                  color="brown"
+                  size="36"
+                >
+                  <span class="white--text">銅賞</span>
+                </v-avatar>
+                <span v-else>不明</span>
+                <!-- <p v-if="item.prefResult.kiramekiPrize">きらめき</p> -->
+              </td>
+              <td v-if="item.prefResult.representative">○</td>
+              <td v-else></td>
+              <template v-if="item.prefResult.representative">
+                <td>
+                  <v-avatar
+                    v-if="item.kansaiResult.prize === 'gold'"
+                    color="yellow lighten-2"
+                    size="36"
+                  >
+                    <span class="black--text">金賞</span>
+                  </v-avatar>
+                  <v-avatar
+                    v-else-if="item.kansaiResult.prize === 'silver'"
+                    color="grey"
+                    size="36"
+                  >
+                    <span class="white--text">銀賞</span>
+                  </v-avatar>
+                  <v-avatar
+                    v-else-if="item.kansaiResult.prize === 'bronze'"
+                    color="brown"
+                    size="36"
+                  >
+                    <span class="white--text">銅賞</span>
+                  </v-avatar>
+                  <span v-else>不明</span>
+                </td>
+              </template>
+              <td v-else></td>
+            </tr>
+          </tbody>
+        </template>
+      </v-simple-table>
+    </v-card>
   </v-container>
 </template>
 
@@ -189,8 +316,8 @@ export default {
           conductor: null,
           prefResult: {
             nth: '44',
-            prize: null,
-            kiramekiPrize: false,
+            prize: 'silver',
+            kiramekiPrize: true,
             representative: false
           }
         },
