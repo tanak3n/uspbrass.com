@@ -36,7 +36,7 @@
         <v-card-text class="headline font-weight-light">
           University of Shiga Prefecture Wind Orchestra
         </v-card-text>
-        <v-btn outlined nuxt to="/contact" active-class="">お問い合わせ</v-btn>
+        <v-btn outlined nuxt to="/contact">お問い合わせ</v-btn>
         <v-card-text class="mt-5">
           <v-btn
             v-for="(footerItem, i) in footerItems"
