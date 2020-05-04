@@ -2,7 +2,7 @@
   <div>
     <v-container fluid>
       <v-alert type="info">
-        現在、新型コロナウイルスの影響で活動を自粛しています。
+        現在、新型コロナウイルスの影響で活動を休止しています。
       </v-alert>
       <v-img max-height="500px" position="50% 90%" src="/regular_concert.jpg">
         <v-row
@@ -15,27 +15,19 @@
               University of Shiga Prefecture Wind Orchestra
             </h1>
             <p class="subtitle-1">
-              こんにちは！滋賀県立大学吹奏楽部です！コンクールや定期演奏会，依頼演奏に向けて日々練習に取り組んでいます！
+              こんにちは！滋賀県立大学吹奏楽部です！コンクール，定期演奏会や依頼演奏に向けて日々練習に取り組んでいます！
             </p>
             <v-divider dark />
-            <dl>
+            <dl v-for="(jumbotronItem, i) in jumbotronItems" :key="i">
               <dt class="font-weight-black mt-4">
-                <v-icon color="white" class="mr-1">mdi-map-marker</v-icon
-                >練習場所
+                <v-icon color="white" class="mr-1">{{
+                  jumbotronItem.icon
+                }}</v-icon
+                >{{ jumbotronItem.term }}
               </dt>
               <dd>
-                滋賀県立大学 環境科学部B8棟 <ruby>圃場<rt>ほじょう</rt></ruby>
+                {{ jumbotronItem.description }}
               </dd>
-              <dt class="font-weight-black mt-4">
-                <v-icon color="white" class="mr-1">mdi-clock-outline</v-icon
-                >練習日時
-              </dt>
-              <dd>火・木 18:00—20:00，土 10:00—16:00</dd>
-              <dt class="font-weight-black mt-4">
-                <v-icon color="white" class="mr-1">mdi-account-group</v-icon
-                >活動人数
-              </dt>
-              <dd>48人（1回生: 1人，2回生: 10人，3回生: 14人，4回生: 18人）</dd>
             </dl>
           </v-col>
         </v-row>
@@ -49,7 +41,25 @@
 export default {
   data() {
     return {
-      title: 'ホーム'
+      title: 'ホーム',
+      jumbotronItems: [
+        {
+          icon: 'mdi-map-marker',
+          term: '練習場所',
+          description: '滋賀県立大学 環境科学部棟 B8講義室 2F（圃場実験施設）'
+        },
+        {
+          icon: 'mdi-clock-outline',
+          term: '練習日時',
+          description: '火・木 18:00—20:00，土 10:00—16:00'
+        },
+        {
+          icon: 'mdi-account-group',
+          term: '活動人数',
+          description:
+            '48人（1回生: 1人，2回生: 10人，3回生: 14人，4回生: 18人）'
+        }
+      ]
     }
   },
   head() {
