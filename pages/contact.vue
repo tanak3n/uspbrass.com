@@ -30,7 +30,13 @@
           ><v-card-text class="white--text"
             >Twitterアカウントをお持ちでない方は、こちらのフォームからお問い合わせください。</v-card-text
           ><v-card-actions>
-            <v-btn color="white" light class="mx-auto">フォームを開く</v-btn>
+            <v-btn
+              color="white"
+              light
+              class="mx-auto"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSduGmIi2YGcIs9tl3gfCORbA30DDhwM2TrFow6r3K2kHvj2HQ/viewform?usp=sf_link"
+              >フォームを開く</v-btn
+            >
           </v-card-actions></v-card
         ></v-col
       >
