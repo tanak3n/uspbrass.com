@@ -87,7 +87,7 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-card class="hidden-xs-only">
+    <v-card class="hidden-xs-only pa-4">
       <v-card-title><h2>吹奏楽コンクール</h2></v-card-title>
       <v-simple-table>
         <template v-slot:default>
