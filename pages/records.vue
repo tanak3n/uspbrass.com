@@ -1,6 +1,15 @@
 <template>
   <v-container>
-    <h1>{{ title }}</h1>
+    <v-row align="center" justify="center">
+      <v-col sm="auto" cols="12">
+        <h1 class="display-2 text-center">{{ title }}</h1>
+      </v-col>
+      <v-col md="5" sm="6" cols="10">
+        <p>
+          滋賀県立大学吹奏楽部は、毎年夏に行われる全日本吹奏楽連盟・朝日新聞主催の吹奏楽コンクール、冬に行われるアンサンブルコンテストに出場しています。
+        </p>
+      </v-col>
+    </v-row>
     <h2 class="hidden-sm-and-up">吹奏楽コンクール</h2>
     <v-row class="hidden-sm-and-up">
       <v-col v-for="item in competitionResults" :key="item.year" cols="12">
