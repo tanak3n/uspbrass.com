@@ -36,7 +36,7 @@
             <v-avatar
               v-if="item.prefResult.prize === 'gold'"
               class="mx-2"
-              color="yellow lighten-2"
+              color="#BFA95F"
             >
               <span class="black--text">金賞</span>
             </v-avatar>
@@ -63,7 +63,7 @@
               <v-avatar
                 v-if="item.kansaiResult.prize === 'gold'"
                 class="mx-2"
-                color="yellow lighten-2"
+                color="#BFA95F"
               >
                 <span class="black--text">金賞</span>
               </v-avatar>
@@ -111,7 +111,7 @@
               <td>
                 <v-avatar
                   v-if="item.prefResult.prize === 'gold'"
-                  color="yellow lighten-2"
+                  color="#BFA95F"
                   size="36"
                 >
                   <span class="black--text">金賞</span>
@@ -139,7 +139,7 @@
                 <td>
                   <v-avatar
                     v-if="item.kansaiResult.prize === 'gold'"
-                    color="yellow lighten-2"
+                    color="#BFA95F"
                     size="36"
                   >
                     <span class="black--text">金賞</span>
