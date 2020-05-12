@@ -1,7 +1,11 @@
 <template>
   <div>
     <v-container fluid class="ma-0 pa-0">
-      <v-img height="100vh" position="50% 90%" src="/regular_concert.jpg">
+      <v-img
+        height="100vh"
+        position="50% 90%"
+        :src="require('~/assets/regular_concert.jpg')"
+      >
         <v-row
           align="center"
           justify="center"

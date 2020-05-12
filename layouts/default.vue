@@ -21,7 +21,7 @@
     <v-app-bar app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-avatar tile class="mr-2">
-        <v-img src="/logo.png" />
+        <v-img :src="require('~/assets/logo.png')" />
       </v-avatar>
       <v-toolbar-title>滋賀県立大学吹奏楽部</v-toolbar-title>
       <v-btn text nuxt to="/" class="ml-5 hidden-xs-only">ホーム</v-btn>
