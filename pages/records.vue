@@ -14,17 +14,13 @@
     <v-row class="hidden-sm-and-up">
       <v-col v-for="item in competitionResults" :key="item.year" cols="12">
         <v-card>
-          <v-card-title> {{ item.year }}年 </v-card-title>
+          <v-card-title>{{ item.year }}年</v-card-title>
           <v-card-text>
             <dl>
               <dt class="font-weight-bold">課題曲</dt>
-              <dd class="ml-2">
-                {{ item.required ? item.required : '不明' }}
-              </dd>
+              <dd class="ml-2">{{ item.required ? item.required : '不明' }}</dd>
               <dt class="font-weight-bold">自由曲</dt>
-              <dd class="ml-2">
-                {{ item.free ? item.free : '不明' }}
-              </dd>
+              <dd class="ml-2">{{ item.free ? item.free : '不明' }}</dd>
               <dt class="font-weight-bold">指揮者</dt>
               <dd class="ml-2">
                 {{ item.conductor ? item.conductor : '不明' }}
@@ -88,7 +84,9 @@
       </v-col>
     </v-row>
     <v-card class="hidden-xs-only pa-4">
-      <v-card-title><h2>吹奏楽コンクール</h2></v-card-title>
+      <v-card-title>
+        <h2>吹奏楽コンクール</h2>
+      </v-card-title>
       <v-simple-table>
         <template v-slot:default>
           <thead>
