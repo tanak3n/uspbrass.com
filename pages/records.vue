@@ -18,12 +18,12 @@
           <v-card-text>
             <dl>
               <dt class="font-weight-bold">課題曲</dt>
-              <dd class="ml-2">{{ item.required ? item.required : '不明' }}</dd>
+              <dd class="ml-2">{{ item.required || '不明' }}</dd>
               <dt class="font-weight-bold">自由曲</dt>
-              <dd class="ml-2">{{ item.free ? item.free : '不明' }}</dd>
+              <dd class="ml-2">{{ item.free || '不明' }}</dd>
               <dt class="font-weight-bold">指揮者</dt>
               <dd class="ml-2">
-                {{ item.conductor ? item.conductor : '不明' }}
+                {{ item.conductor || '不明' }}
               </dd>
             </dl>
           </v-card-text>
@@ -61,20 +61,21 @@
           <tbody>
             <tr v-for="item in competitionRecords" :key="item.year">
               <td>{{ item.year }}</td>
-              <td>{{ item.conductor }}</td>
-              <td>{{ item.required }}</td>
-              <td>{{ item.free }}</td>
+              <td>{{ item.conductor || '不明' }}</td>
+              <td>{{ item.required || '不明' }}</td>
+              <td>{{ item.free || '不明' }}</td>
               <td>
                 <MedalAvater :prize="item.prefResult.prize" />
               </td>
-              <td v-if="item.prefResult.representative">○</td>
-              <td v-else></td>
-              <template v-if="item.prefResult.representative">
-                <td>
-                  <MedalAvater :prize="item.kansaiResult.prize" />
-                </td>
-              </template>
-              <td v-else></td>
+              <td>
+                <span v-if="item.prefResult.representative">○</span>
+              </td>
+              <td>
+                <MedalAvater
+                  v-if="item.prefResult.representative"
+                  :prize="item.kansaiResult.prize"
+                />
+              </td>
             </tr>
           </tbody>
         </template>
