@@ -29,55 +29,13 @@
           </v-card-text>
           <v-card-title>県大会</v-card-title>
           <v-card-text>
-            <v-avatar
-              v-if="item.prefResult.prize === 'gold'"
-              class="mx-2"
-              color="#BFA95F"
-            >
-              <span class="black--text">金賞</span>
-            </v-avatar>
-            <v-avatar
-              v-else-if="item.prefResult.prize === 'silver'"
-              class="mx-2"
-              color="grey"
-            >
-              <span class="white--text">銀賞</span>
-            </v-avatar>
-            <v-avatar
-              v-else-if="item.prefResult.prize === 'bronze'"
-              class="mx-2"
-              color="brown"
-            >
-              <span class="white--text">銅賞</span>
-            </v-avatar>
-            <span v-else>不明</span>
+            <MedalAvater :prize="item.prefResult.prize" />
             <span v-if="item.prefResult.representative">滋賀県代表</span>
           </v-card-text>
           <template v-if="item.prefResult.representative">
             <v-card-title>関西大会</v-card-title>
             <v-card-text>
-              <v-avatar
-                v-if="item.kansaiResult.prize === 'gold'"
-                class="mx-2"
-                color="#BFA95F"
-              >
-                <span class="black--text">金賞</span>
-              </v-avatar>
-              <v-avatar
-                v-else-if="item.kansaiResult.prize === 'silver'"
-                class="mx-2"
-                color="grey"
-              >
-                <span class="white--text">銀賞</span>
-              </v-avatar>
-              <v-avatar
-                v-else-if="item.kansaiResult.prize === 'bronze'"
-                class="mx-2"
-                color="brown"
-              >
-                <span class="white--text">銅賞</span>
-              </v-avatar>
-              <span v-else>不明</span>
+              <MedalAvater :prize="item.kansaiResult.prize" />
             </v-card-text>
           </template>
         </v-card>
@@ -107,56 +65,13 @@
               <td>{{ item.required }}</td>
               <td>{{ item.free }}</td>
               <td>
-                <v-avatar
-                  v-if="item.prefResult.prize === 'gold'"
-                  color="#BFA95F"
-                  size="36"
-                >
-                  <span class="black--text">金賞</span>
-                </v-avatar>
-                <v-avatar
-                  v-else-if="item.prefResult.prize === 'silver'"
-                  color="grey"
-                  size="36"
-                >
-                  <span class="white--text">銀賞</span>
-                </v-avatar>
-                <v-avatar
-                  v-else-if="item.prefResult.prize === 'bronze'"
-                  color="brown"
-                  size="36"
-                >
-                  <span class="white--text">銅賞</span>
-                </v-avatar>
-                <span v-else>不明</span>
-                <!-- <p v-if="item.prefResult.kiramekiPrize">きらめき</p> -->
+                <MedalAvater :prize="item.prefResult.prize" />
               </td>
               <td v-if="item.prefResult.representative">○</td>
               <td v-else></td>
               <template v-if="item.prefResult.representative">
                 <td>
-                  <v-avatar
-                    v-if="item.kansaiResult.prize === 'gold'"
-                    color="#BFA95F"
-                    size="36"
-                  >
-                    <span class="black--text">金賞</span>
-                  </v-avatar>
-                  <v-avatar
-                    v-else-if="item.kansaiResult.prize === 'silver'"
-                    color="grey"
-                    size="36"
-                  >
-                    <span class="white--text">銀賞</span>
-                  </v-avatar>
-                  <v-avatar
-                    v-else-if="item.kansaiResult.prize === 'bronze'"
-                    color="brown"
-                    size="36"
-                  >
-                    <span class="white--text">銅賞</span>
-                  </v-avatar>
-                  <span v-else>不明</span>
+                  <MedalAvater :prize="item.kansaiResult.prize" />
                 </td>
               </template>
               <td v-else></td>
@@ -169,7 +84,12 @@
 </template>
 
 <script>
+import MedalAvater from '~/components/MedalAvater'
+
 export default {
+  components: {
+    MedalAvater
+  },
   data() {
     return {
       title: '大会記録',
