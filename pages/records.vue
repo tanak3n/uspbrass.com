@@ -49,7 +49,7 @@
         <template v-slot:default>
           <thead>
             <tr>
-              <th class="text-left">西暦</th>
+              <th class="text-left">年度</th>
               <th class="text-left">指揮者</th>
               <th class="text-left">課題曲</th>
               <th class="text-left">自由曲</th>
@@ -81,6 +81,69 @@
         </template>
       </v-simple-table>
     </v-card>
+    <h2 class="hidden-sm-and-up">アンサンブルコンテンスト</h2>
+    <v-row class="hidden-sm-and-up">
+      <v-col v-for="item in ensembleRecords" :key="item.year" cols="12">
+        <v-card>
+          <v-card-title>{{ item.year }}年</v-card-title>
+          <v-card-text>
+            <dl>
+              <dt class="font-weight-bold">曲名</dt>
+              <dd class="ml-2">{{ item.style }} {{ item.title || '不明' }}</dd>
+            </dl>
+          </v-card-text>
+          <v-card-title>県大会</v-card-title>
+          <v-card-text>
+            <MedalAvater :prize="item.prefResult.prize" />
+            <span v-if="item.prefResult.representative">滋賀県代表</span>
+          </v-card-text>
+          <template v-if="item.prefResult.representative">
+            <v-card-title>関西大会</v-card-title>
+            <v-card-text>
+              <MedalAvater :prize="item.kansaiResult.prize" />
+            </v-card-text>
+          </template>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-card class="hidden-xs-only pa-4 mt-4">
+      <v-card-title>
+        <h2>アンサンブルコンテンスト</h2>
+      </v-card-title>
+      <v-simple-table>
+        <template v-slot:default>
+          <thead>
+            <tr>
+              <th class="text-left">年度</th>
+              <th class="text-left">編成</th>
+              <th class="text-left">曲名</th>
+              <th class="text-left">結果（県大会）</th>
+              <th class="text-left">滋賀県代表</th>
+              <th class="text-left">結果（関西大会）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in ensembleRecords" :key="item.year">
+              <td>{{ item.year }}</td>
+              <td>{{ item.style || '不明' }}</td>
+              <td>{{ item.title || '不明' }}</td>
+              <td>
+                <MedalAvater :prize="item.prefResult.prize" />
+              </td>
+              <td>
+                <span v-if="item.prefResult.representative">○</span>
+              </td>
+              <td>
+                <MedalAvater
+                  v-if="item.prefResult.representative"
+                  :prize="item.kansaiResult.prize"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </template>
+      </v-simple-table>
+    </v-card>
   </v-container>
 </template>
 
@@ -94,7 +157,8 @@ export default {
   data() {
     return {
       title: '大会記録',
-      competitionRecords: require('~/assets/competitionRecords')
+      competitionRecords: require('~/assets/competitionRecords'),
+      ensembleRecords: require('~/assets/ensembleRecords')
     }
   },
   head() {

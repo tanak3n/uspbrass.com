@@ -1,0 +1,29 @@
+[
+    {
+        "year": 2019,
+        "style": "木管3重奏",
+        "members": ["室岡 響", "青柳 光哉", "田中 健一"],
+        "title": "落ち葉の舞う季節／渡部 哲哉",
+        "prefResult": {
+            "nth": "48",
+            "prize": "gold",
+            "representative": true
+        },
+        "kansaiResult": {
+            "nth": "46",
+            "prize": "bronze",
+            "representative": false
+        }
+    },
+    {
+        "year": 2018,
+        "style": "金管8重奏",
+        "members": null,
+        "title": "華円舞／福田 洋介",
+        "prefResult": {
+            "nth": "47",
+            "prize": "silver",
+            "representative": false
+        }
+    }
+]
