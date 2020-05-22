@@ -119,8 +119,7 @@ export default {
         {
           icon: 'mdi-account-group',
           term: '活動人数',
-          description:
-            '48人（1回生: 1人，2回生: 10人，3回生: 14人，4回生: 18人）'
+          description: '46人（B1: 4人，B2: 10人，B3: 14人，B4: 18人）'
         }
       ]
     }
