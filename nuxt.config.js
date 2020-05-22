@@ -88,9 +88,9 @@ export default {
       }
     },
     defaultAssets: {
-      font: {
-        family: 'Noto Sans JP'
-      }
+      // font: {
+      //   family: 'Noto Sans JP'
+      // }
     }
   },
   /*
