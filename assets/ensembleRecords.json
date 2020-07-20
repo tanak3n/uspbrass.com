@@ -25,5 +25,16 @@
             "prize": "silver",
             "representative": false
         }
+    },
+    {
+        "year": 2017,
+        "style": "管楽8重奏",
+        "members": null,
+        "title": "ブエノスアイレスの春／A.ピアソラ",
+        "prefResult": {
+            "nth": "46",
+            "prize": "silver",
+            "representative": false
+        }
     }
 ]
