@@ -36,5 +36,53 @@
             "prize": "silver",
             "representative": false
         }
+    },
+    {
+        "year": 2016,
+        "style": null,
+        "members": null,
+        "title": null,
+        "prefResult": {
+            "nth": "45",
+            "prize": "gold",
+            "representative": true
+        },
+        "kansaiResult": {
+            "nth": "43",
+            "prize": "silver",
+            "representative": false
+        }
+    },
+    {
+        "year": 2008,
+        "style": "サックス4重奏",
+        "members": null,
+        "title": null,
+        "prefResult": {
+            "nth": "37",
+            "prize": "gold",
+            "representative": true
+        },
+        "kansaiResult": {
+            "nth": "35",
+            "prize": "silver",
+            "representative": false
+        }
+    },
+    {
+        "year": 2007,
+        "style": "打楽器8重奏",
+        "members": null,
+        "title": null,
+        "prefResult": {
+            "nth": "36",
+            "prize": "gold",
+            "representative": true
+        },
+        "kansaiResult": {
+            "nth": "34",
+            "prize": "silver",
+            "representative": false
+        }
     }
 ]
