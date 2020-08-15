@@ -28,9 +28,9 @@
       <v-spacer />
       <v-btn text nuxt to="/contact" class="hidden-xs-only">お問い合わせ</v-btn>
     </v-app-bar>
-    <v-content>
+    <v-main>
       <nuxt />
-    </v-content>
+    </v-main>
     <v-footer dark padless app absolute>
       <v-card flat tile class="text-center flex">
         <v-card-text class="headline font-weight-light">
