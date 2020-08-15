@@ -84,7 +84,7 @@
             width="100%"
             height="450"
             frameborder="0"
-            style="border:0;"
+            style="border: 0;"
             allowfullscreen
             aria-hidden="false"
             tabindex="0"
@@ -99,13 +99,13 @@
 export default {
   data() {
     return {
-      title: 'お問い合わせ'
+      title: 'お問い合わせ',
     }
   },
   head() {
     return {
-      title: this.title
+      title: this.title,
     }
-  }
+  },
 }
 </script>

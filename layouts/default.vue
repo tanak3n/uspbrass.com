@@ -75,16 +75,16 @@ export default {
         { icon: 'mdi-instagram', href: 'https://www.instagram.com/usp_brass/' },
         {
           icon: 'mdi-youtube',
-          href: 'https://www.youtube.com/channel/UCVaybU4j_-bD7p8R3EA-k6w/'
-        }
+          href: 'https://www.youtube.com/channel/UCVaybU4j_-bD7p8R3EA-k6w/',
+        },
       ],
       naviItems: [
         { title: 'ホーム', icon: 'mdi-home', to: '/' },
         // { title: '当部について', icon: 'mdi-information', to: '/about' },
         { title: '大会記録', icon: 'mdi-history', to: '/records' },
-        { title: 'お問い合わせ', icon: 'mdi-help-circle', to: '/contact' }
-      ]
+        { title: 'お問い合わせ', icon: 'mdi-help-circle', to: '/contact' },
+      ],
     }
-  }
+  },
 }
 </script>

@@ -8,13 +8,13 @@
 export default {
   data() {
     return {
-      title: '当部について'
+      title: '当部について',
     }
   },
   head() {
     return {
-      title: this.title
+      title: this.title,
     }
-  }
+  },
 }
 </script>

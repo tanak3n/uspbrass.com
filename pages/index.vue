@@ -88,7 +88,7 @@
               width="100%"
               height="500"
               frameborder="0"
-              style="border:0;"
+              style="border: 0;"
               allowfullscreen=""
               aria-hidden="false"
               tabindex="0"
@@ -109,26 +109,26 @@ export default {
         {
           icon: 'mdi-map-marker',
           term: '練習場所',
-          description: '滋賀県立大学 環境科学部棟 B8講義室 2F（圃場実験施設）'
+          description: '滋賀県立大学 環境科学部棟 B8講義室 2F（圃場実験施設）',
         },
         {
           icon: 'mdi-clock-outline',
           term: '練習日時',
-          description: '火・木 18:00—20:00，土 10:00—16:00'
+          description: '火・木 18:00—20:00，土 10:00—16:00',
         },
         {
           icon: 'mdi-account-group',
           term: '活動人数',
-          description: '50人（B1: 5人，B2: 10人，B3: 15人，B4: 18人，M1: 2人）'
-        }
-      ]
+          description: '50人（B1: 5人，B2: 10人，B3: 15人，B4: 18人，M1: 2人）',
+        },
+      ],
     }
   },
   head() {
     return {
-      title: this.title
+      title: this.title,
     }
-  }
+  },
 }
 </script>
 

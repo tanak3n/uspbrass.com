@@ -15,8 +15,8 @@ export default {
   props: {
     prize: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

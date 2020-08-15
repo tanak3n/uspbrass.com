@@ -152,19 +152,19 @@ import MedalAvater from '~/components/MedalAvater'
 
 export default {
   components: {
-    MedalAvater
+    MedalAvater,
   },
   data() {
     return {
       title: '大会記録',
       competitionRecords: require('~/assets/competitionRecords'),
-      ensembleRecords: require('~/assets/ensembleRecords')
+      ensembleRecords: require('~/assets/ensembleRecords'),
     }
   },
   head() {
     return {
-      title: this.title
+      title: this.title,
     }
-  }
+  },
 }
 </script>
