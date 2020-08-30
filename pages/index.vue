@@ -35,9 +35,6 @@
       </v-img>
     </v-container>
     <v-container>
-      <v-alert type="info">
-        現在、新型コロナウイルスの影響で活動を休止しています。
-      </v-alert>
       <v-row>
         <v-col cols="12" md="6">
           <v-card class="pa-3" height="100%">
