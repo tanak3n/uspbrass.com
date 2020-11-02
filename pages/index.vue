@@ -1,18 +1,14 @@
 <template>
   <div>
-    <v-container fluid>
-      <v-img :src="require('~/assets/regular_concert.jpg')">
-        <v-row
-          align="center"
-          justify="center"
-          class="white--text mx-3 text-center"
-        >
-          <v-col class="with-shadow my-1" cols="12">
-            <h1 class="display-1 mb-4">
+    <div class="top-background white--text with-shadow">
+      <v-container class="pa-6">
+        <v-row>
+          <v-col>
+            <h1 class="text-h3 mb-4">
               University of Shiga Prefecture Wind Orchestra
             </h1>
             <p class="subtitle-1">
-              こんにちは！滋賀県立大学吹奏楽部です！コンクール，定期演奏会や依頼演奏に向けて日々練習に取り組んでいます！
+              こんにちは！滋賀県立大学吹奏楽部です！コンクール、定期演奏会や依頼演奏に向けて日々練習に取り組んでいます！
             </p>
             <v-divider dark />
             <dl v-for="(jumbotronItem, i) in jumbotronItems" :key="i">
@@ -26,38 +22,51 @@
                 {{ jumbotronItem.description }}
               </dd>
             </dl>
-            <p>
-              定期演奏会の事前お申し込みは<a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSe4uNIkRrUMie7fwD_wrqEI0J2eolK7IaqLiRu6x9FrfPKMMw/viewform"
-                >こちら</a
-              >からお願いいたします。
-            </p>
           </v-col>
         </v-row>
-      </v-img>
-    </v-container>
-    <v-container>
-      <v-row>
-        <v-col cols="12" md="6">
-          <v-card class="pa-3" height="100%">
-            <h2 class="headline font-weight-light">
-              ホームページをリニューアルしました
-            </h2>
-            <p class="mt-4">
-              5/5より吹奏楽部のホームページが新しくなりました。今後、演奏会の情報やパート紹介などのコンテンツを充実させていきます。これからもよろしくお願いいたします。
+      </v-container>
+    </div>
+    <v-container pt-6>
+      <h2 class="text-center text-h3 py-5">お知らせ</h2>
+      <v-card class="mx-auto my-5" elevation="2">
+        <v-card-text>
+          <p class="display-1 text--primary">
+            12/6（日）に定期演奏会を開催します。
+          </p>
+          <div class="text--primary">
+            <p>
+              滋賀県立大学吹奏楽部は12/6（日）に定期演奏会を開催いたします。
+              場所はひこね市文化プラザ、開場は13:00、開演は13:30となっております。皆様のご来場を心からお待ちしております。
             </p>
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="6">
-          <v-card class="pa-3" height="100%">
-            <h2 class="headline font-weight-light">
-              新入部員募集中！
-            </h2>
-            <p class="mt-4">
+            <p>
+              なお、今回の定期演奏会は新型コロナウイルス対策のため、来場された方の連絡先を控えさせていただきます。
+              また、受付の混雑回避のため、ご来場の事前申し込みフォームを用意しております。ご協力をよろしくお願いいたします。ご不明な点がございましたら、ページ下部のお問い合わせボタンよりお気軽にお問い合わせください。
+            </p>
+          </div>
+        </v-card-text>
+        <v-card-actions>
+          <v-btn
+            text
+            color="deep-purple accent-4"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe4uNIkRrUMie7fwD_wrqEI0J2eolK7IaqLiRu6x9FrfPKMMw/viewform"
+          >
+            事前申し込みフォームはこちら
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+      <v-card class="mx-auto my-5" style="height: 100%;" elevation="2">
+        <v-card-text>
+          <p class="display-1 text--primary">
+            新入部員募集中！
+          </p>
+          <div class="text--primary">
+            <p>
               滋賀県立大学吹奏楽部は新入部員を絶賛募集中です。
             </p>
-          </v-card>
-        </v-col>
+          </div>
+        </v-card-text>
+      </v-card>
+      <v-row>
         <v-col cols="12" md="4">
           <v-card class="pa-3">
             <h2 class="headline font-weight-light mb-4">
@@ -113,13 +122,13 @@ export default {
         {
           icon: 'mdi-clock-outline',
           term: '練習日時',
-          description: '火・木 18:00—20:00，土 10:00—16:00',
+          description: '火・木 18:00—20:00、土 10:00—16:00',
         },
         {
           icon: 'mdi-account-group',
           term: '活動人数',
           description:
-            '60人（B1: 15人，B2: 10人，B3: 15人，B4: 18人，M1: 2人）',
+            '60人（B1: 15人、B2: 10人、B3: 15人、B4: 18人、M1: 2人）',
         },
       ],
     }
@@ -135,5 +144,9 @@ export default {
 <style>
 .with-shadow {
   text-shadow: black 1px 1px 10px, black -1px -1px 10px;
+}
+.top-background {
+  background: 80% 80% url('~assets/regular_concert.jpg');
+  background-size: cover;
 }
 </style>
