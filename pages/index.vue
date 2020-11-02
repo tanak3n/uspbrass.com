@@ -1,15 +1,11 @@
 <template>
   <div>
-    <v-container fluid class="ma-0 pa-0">
-      <v-img
-        height="100vh"
-        position="50% 90%"
-        :src="require('~/assets/regular_concert.jpg')"
-      >
+    <v-container fluid>
+      <v-img :src="require('~/assets/regular_concert.jpg')">
         <v-row
           align="center"
           justify="center"
-          class="white--text mx-3 fill-height text-center"
+          class="white--text mx-3 text-center"
         >
           <v-col class="with-shadow my-1" cols="12">
             <h1 class="display-1 mb-4">
@@ -30,6 +26,12 @@
                 {{ jumbotronItem.description }}
               </dd>
             </dl>
+            <p>
+              定期演奏会の事前お申し込みは<a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSe4uNIkRrUMie7fwD_wrqEI0J2eolK7IaqLiRu6x9FrfPKMMw/viewform"
+                >こちら</a
+              >からお願いいたします。
+            </p>
           </v-col>
         </v-row>
       </v-img>
